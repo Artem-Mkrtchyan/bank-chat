@@ -1,19 +1,20 @@
+import { TInitialState, TLoginRes, TError } from './../../types/authType';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 
-type TInitialState = {
-  loading: boolean
-  error: string
-  isAuth: boolean
-  data: {}
-}
-
 const initialState: TInitialState = {
   loading: false,
-  error: '',
   isAuth: false,
+  storageName: 'userData',
+  error: {
+    Error: '',
+    ErrorMessageText: ''
+  },
   data: {
-
+    userId: null,
+    jwtToken: '',
+    login: '',
+    role: 'CLIENT'
   }
 }
 
@@ -22,7 +23,17 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState: initialState,
   reducers: {
-
+    fetching(state) {
+      state.loading = true
+    },
+    setUserData(state, action: PayloadAction<TLoginRes>) {
+      state.loading = false
+      state.isAuth = true
+      state.data = action.payload
+    },
+    setError(state, action: PayloadAction<TError>) {
+      state.error = action.payload
+    }
   }
 })
 

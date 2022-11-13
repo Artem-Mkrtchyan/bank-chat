@@ -1,0 +1,10 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%
+}
+
+.formWrap {
+  flex-basis: 500px;
+}

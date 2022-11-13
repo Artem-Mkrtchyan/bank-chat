@@ -1,0 +1,83 @@
+.button {
+  display: flex;
+  padding: 9px 16px;
+  align-items: center;
+  justify-content: center;
+  color: var(--constant_white);
+  border: 1px solid var(--constant_white);
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  transition-property: color, background-color, border-color;
+  transition-duration: .15s;
+  transition-timing-function: ease-in-out;
+}
+
+.button:disabled {
+  background-color: var(--day);
+  border-color: var(--day);
+  color: var(--noonday-disable);
+}
+
+.button:hover {
+  color: var(--constant_white);
+  background-color: var(--otherbase_bg_d);
+  border-color: var(--otherbase_bg_d);
+}
+
+.button:active {
+  color: var(--constant_white);
+  background-color: var(--otherbase_bg);
+  border-color: var(--otherbase_bg);
+}
+
+.button__primary {
+  color: var(--constant_white);
+  border-color: var(--brand);
+  background-color: var(--brand);
+}
+
+.button__secondary {
+  display: flex;
+  column-gap: 8px;
+  color: var(--afterdark);
+  background-color: transparent;
+  border: 1px solid var(----afterdark);
+}
+
+.button__text {
+  font-family: 'Open Sans';
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: inherit;
+}
+
+.fa {
+  display: block;
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+
+.fa::before,
+.fa::after {
+  content: '';
+  position: absolute;
+  bottom: 50%;
+  width: 6px;
+  height: 1px;
+  border-radius: 1px;
+  background-color: var(----afterdark);
+}
+
+.fa::before {
+  left: 0;
+  transform: translateY(50%) rotate(45deg);
+}
+
+.fa::after {
+  right: 0;
+  transform: translateY(50%) rotate(-45deg);
+}

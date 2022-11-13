@@ -1,6 +1,7 @@
 import React from 'react';
+import { Button } from './components/Button/Button';
 import './App.css';
-import { AppRouter } from './component/AppRouts';
+import { AppRouter } from './components/AppRouts';
 
 function App() {
   return (
